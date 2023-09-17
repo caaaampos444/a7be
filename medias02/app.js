@@ -16,7 +16,10 @@ entradaDados.question('Digite o nome do aluno: ',function(nomeAlunoUsuario){
                     let nota4=nota4Usuario
                     let media=calculoMedias.calcularMedias(nota1,nota2,nota3,nota4)
                     if(media>=50&&media<=69){
-                        
+                        entradaDados.question('ALUNO DE EXAME! Digite a quinta nota: ',function(notaExameUsuario){
+                            let notaExame=notaExameUsuario
+                            let novaMedia=calculoMedias.calcularMediasExame(media,notaExame)
+                        })
                     }
                 })
             })

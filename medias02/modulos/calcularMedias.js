@@ -26,8 +26,19 @@ const calcularMedias=function(valorN1,valorN2,valorN3,valorN4){
         return status='REPROVADO'
     }
 }
-const calcularMediasExame=function(valorMedia){
-    
-}
-module.exports={calcularMedias}
-//module.exports={calcularMediasExame}
+const calcularMediasExame=function(valorMedia,valorNotaExame,valorNovaMedia){
+    let notaExame=valorNotaExame
+    let media=valorMedia
+    let novaMedia=valorNovaMediaMedia
+    if(notaExame=='')
+        console.log('ERRO: É obrigatório a digitação de todos os valores.')
+    else if(isNaN(notaExame))
+        console.log('ERRO: É obrigatório somente a digitação de valores numéricos.')
+    else if(notaExame<0||notaExame>100)
+        console.log('ERRO: Os valores devem estar entre 0 e 100.')
+    else{
+        novaMedia=(Number(media)+Number(notaExame))/2
+        console.log('NOVA MÉDIA: '+`${novaMedia.toFixed(2)}`)
+    }
+}       
+module.exports={calcularMedias,calcularMediasExame}
