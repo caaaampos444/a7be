@@ -4,4 +4,7 @@ var entradaDados=readline.createInterface({
     input: process.stdin,
     output: process.stdout
 })
-entradaDados.question(('Digite o valor: '))
+entradaDados.question('Digite o valor: ',function(fatorialUsuario){
+    fatorial=fatorialUsuario
+    calculoFatorial.calcularFatorial(fatorial)
+})
