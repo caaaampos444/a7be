@@ -4,9 +4,10 @@
 * Autor: Gustavo Campos
 * Versão: 1.0
 *****************************************************/
-const calcularParesOuImpares=function(inicial,final){
+const calcularParesOuImpares=function(inicial,final,valorEscolha){
     let valorInicial=inicial
     let valorFinal=final
+    let escolha=valorEscolha
     valorFinal=Number(valorFinal)
     valorInicial=Number(valorInicial)
     let numerosPares=[]
@@ -25,25 +26,52 @@ const calcularParesOuImpares=function(inicial,final){
     else if(valorInicial>valorFinal)
         console.log('ERRO: O valor inicial não pode ser maior do que o valor final.')
     else{
-        console.log('\nNÚMEROS PARES: ')
-        for(let p=valorInicial;p<=valorFinal;p++){
+        if(escolha==1){
+            console.log('\nNÚMEROS PARES: ')
+            for(let p=valorInicial;p<=valorFinal;p++){
             if(p%2==0){
                 numerosPares[contador]=p
                 console.log(numerosPares[contador])
             }
             contador++
+            }
+            return `Quantidade de números pares: ${numerosPares.length}`
         }
-        contador=0
-        console.log('\nNÚMEROS ÍMPARES: ')
-        for(let p=valorInicial;p<=valorFinal;p++){
+        else if(escolha==2){
+            contador=0
+            console.log('\nNÚMEROS ÍMPARES: ')
+            for(let p=valorInicial;p<=valorFinal;p++){
             if(p%2!=0){
                 numerosImpares[contador]=p
                 console.log(numerosImpares[contador])
             }
             contador++
+            }
+            return `Quantidade de números ímpares: ${numerosImpares.length}`
         }
-        console.log(`Quantidade de números pares: ${numerosPares.length}`)
-        return `Quantidade de números ímpares: ${numerosImpares.length}`
+        else if(escolha==3){
+            console.log('\nNÚMEROS PARES: ')
+            for(let p=valorInicial;p<=valorFinal;p++){
+            if(p%2==0){
+                numerosPares[contador]=p
+                console.log(numerosPares[contador])
+            }
+            contador++
+            }
+            contador=0
+            console.log('\nNÚMEROS ÍMPARES: ')
+            for(let p=valorInicial;p<=valorFinal;p++){
+            if(p%2!=0){
+                numerosImpares[contador]=p
+                console.log(numerosImpares[contador])
+            }
+            contador++
+            }
+            console.log(`Quantidade de números pares: ${numerosPares.length}`)
+            return `Quantidade de números ímpares: ${numerosImpares.length}`
+        }
+        else
+            return 'ERRO: Você deve escolher entre 1, 2 ou 3.'
     }
 }
 module.exports={calcularParesOuImpares}
