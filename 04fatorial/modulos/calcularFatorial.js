@@ -19,9 +19,7 @@ const calcularFatorial=function(valorFatorial){
         for(let contador=1;contador<fatorial;contador++)
             resultado=resultado*contador
     }
-    return resultado
+    let print='RESULTADO: '+resultado
+    return print
 }
-const exibirResultado=function(){
-
-}
-module.exports={calcularFatorial,exibirResultado}
+module.exports={calcularFatorial}
