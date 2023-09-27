@@ -27,10 +27,14 @@ entradaDados.question('Digite o nome do aluno: ',function(nomeAlunoUsuario){
                         entradaDados.question('Digite a nota de exame: ',function(notaExameUsuario){
                         let notaExame=notaExameUsuario
                         let novaMedia=calcularMedia.calcularMediasExame(notaExame,media)
-                        if(novaMedia>60)
+                        if(novaMedia>60){
                             console.log(`APROVADO NO EXAME!\nMédia antiga: ${media}\nNova média: ${novaMedia}`)
-                        else
+                            entradaDados.close()
+                        }
+                        else{
                             console.log(`REPROVADO NO EXAME!\nMédia antiga: ${media}\nNova média: ${novaMedia}`)
+                            entradaDados.close()
+                        }
                         })
                     }
                 })
