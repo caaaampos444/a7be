@@ -6,6 +6,6 @@ var entradaDados=readline.createInterface({
 })
 entradaDados.question('Digite o valor: ',function(fatorialUsuario){
     fatorial=fatorialUsuario
-    console.log(calculoFatorial.calcularFatorial(fatorial))
+    console.log(calculoFatorial.printarResultado(fatorial))
     entradaDados.close()
 })

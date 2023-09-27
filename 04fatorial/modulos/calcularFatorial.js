@@ -5,8 +5,7 @@
 * Versão: 1.0
 *****************************************************/
 const calcularFatorial=function(valorFatorial){
-    let fatorial=valorFatorial
-    let resultado=fatorial
+    let fatorial=Number(valorFatorial)
     if(fatorial==0)
         console.log('ERRO: Não existe fatorial de 0.') 
     else if(fatorial==1)
@@ -16,10 +15,18 @@ const calcularFatorial=function(valorFatorial){
     else if(fatorial=='')
         console.log('ERRO: É obrigatório a digitação do valoor.')
     else{
-        for(let contador=1;contador<fatorial;contador++)
+        let resultado=1
+        var fatorialStr=`Fatorial de ${fatorial} é ${fatorial}`
+        for(let contador=fatorial;contador>=2;contador--){
             resultado=resultado*contador
+            fatorialStr+=`x${contador-1}`
+        }
+        fatorialStr+=` = ${resultado}`
+        
     }
-    let print='RESULTADO: '+resultado
-    return print
+    return fatorialStr
 }
-module.exports={calcularFatorial}
+const printarResultado=function(valorFatorial){
+    console.log(calcularFatorial(valorFatorial))
+}
+module.exports={printarResultado}
